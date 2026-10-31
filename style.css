@@ -1,0 +1,62 @@
+:root{--bg:#FBF7FC;--ink:#24112B;--mute:#6A5772;--card:#fff;--line:#E4D6EA;--hero:#2A1233;--hero-ink:#FBEFF6;--rose:#E8527F;--gold:#E9B44C;--accent:#B32A5A;--accent-ink:#fff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#170B1D;--ink:#F6EAF3;--mute:#B9A2C1;--card:#241231;--line:#3E2A4A;--hero:#12081A;--accent:#F0719A;--accent-ink:#170B1D}}
+:root[data-theme="dark"]{--bg:#170B1D;--ink:#F6EAF3;--mute:#B9A2C1;--card:#241231;--line:#3E2A4A;--hero:#12081A;--accent:#F0719A;--accent-ink:#170B1D}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 "DM Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bodoni Moda",Georgia,serif;font-weight:500;line-height:1.08;margin:0}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+header.top{position:sticky;top:0;z-index:20;background:var(--hero);color:var(--hero-ink);padding-top:env(safe-area-inset-top,0px)}
+header.top .wrap{display:flex;justify-content:space-between;align-items:center;height:64px}
+header.top b{font:700 1.2rem "Bodoni Moda",Georgia,serif}
+header.top nav a{text-decoration:none;margin-left:18px;font-size:.95rem;opacity:.8}
+header.top nav a:hover{opacity:1}
+.pill{display:inline-block;background:var(--accent);color:var(--accent-ink);padding:13px 26px;border-radius:999px;text-decoration:none;font-weight:700;border:0;font-size:1rem;cursor:pointer;font-family:inherit}
+.pill.ghost{background:transparent;color:inherit;border:1.5px solid currentColor}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.hero{background:var(--hero);color:var(--hero-ink);position:relative;overflow:hidden;padding:72px 0 96px}
+.hero .wrap{position:relative;z-index:2}
+.hero h1{font-size:clamp(3.2rem,11vw,7.6rem);font-weight:700;max-width:9ch;letter-spacing:-.02em}
+.hero h1 i{color:var(--gold);font-weight:500}
+.hero p{max-width:44ch;font-size:1.15rem;opacity:.85;margin:22px 0 30px}
+.hero .btns{display:flex;gap:12px;flex-wrap:wrap}
+.hero svg{position:absolute;right:-6%;top:0;height:100%;width:60%;z-index:1;opacity:.9}
+.hero path{fill:none;stroke-width:3;stroke-linecap:round;stroke-dasharray:1400;stroke-dashoffset:1400;animation:draw 2.8s ease-out forwards}
+.hero path:nth-child(2){animation-delay:.25s}.hero path:nth-child(3){animation-delay:.5s}.hero path:nth-child(4){animation-delay:.75s}.hero path:nth-child(5){animation-delay:1s}
+@keyframes draw{to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion:reduce){.hero path{animation:none;stroke-dashoffset:0}}
+.stats{background:var(--gold);color:#2A1233}
+.stats .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding-top:20px;padding-bottom:20px;text-align:center}
+.stats b{display:block;font:700 1.9rem "Bodoni Moda",Georgia,serif}
+.stats span{font-size:.9rem}
+section{padding:80px 0}
+h2{font-size:clamp(2rem,5.5vw,3.4rem);margin-bottom:12px}
+.sub{color:var(--mute);max-width:52ch;margin:0 0 40px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.svc{background:var(--card);border:1px solid var(--line);border-radius:22px 22px 22px 6px;padding:26px}
+.svc .ic{width:48px;height:48px;border-radius:50%;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;font-size:1.4rem;margin-bottom:16px}
+.svc h3{font-size:1.5rem;margin-bottom:6px}
+.svc p{margin:0 0 14px;color:var(--mute);font-size:.95rem}
+.svc b{color:var(--accent);font-size:1.1rem}
+.looks{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+.look{aspect-ratio:3/4;border-radius:18px;padding:16px;display:flex;align-items:flex-end;color:#fff;font:500 1.2rem "Bodoni Moda",Georgia,serif;text-shadow:0 1px 8px rgba(0,0,0,.35)}
+.look:nth-child(1){background:linear-gradient(160deg,#2A1233,#B32A5A)}
+.look:nth-child(2){background:linear-gradient(160deg,#E9B44C,#B3522A)}
+.look:nth-child(3){background:linear-gradient(160deg,#5B2A86,#E8527F)}
+.look:nth-child(4){background:linear-gradient(160deg,#1F3A5F,#6BB5C9)}
+.dark{background:var(--hero);color:var(--hero-ink)}
+.dark .sub{color:var(--hero-ink);opacity:.75}
+.quotes{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.quotes blockquote{margin:0;background:rgba(255,255,255,.07);border-radius:18px;padding:24px}
+.quotes p{margin:0 0 12px;font:italic 500 1.2rem/1.4 "Bodoni Moda",Georgia,serif}
+.quotes cite{font-style:normal;opacity:.7;font-size:.9rem}
+.book{display:grid;gap:36px;grid-template-columns:1fr}
+@media(min-width:800px){.book{grid-template-columns:1fr 1fr}.hero svg{opacity:1}}
+form{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:26px;display:grid;gap:14px}
+label{display:grid;gap:6px;font-weight:500;font-size:.95rem}
+input,select{font:inherit;padding:12px 14px;border-radius:12px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.hours{display:grid;grid-template-columns:auto 1fr;gap:6px 22px;margin:18px 0}
+.hours dt{color:var(--mute)}.hours dd{margin:0}
+footer{background:var(--hero);color:var(--hero-ink);padding:30px 0;text-align:center;font-size:.9rem;opacity:.95}
